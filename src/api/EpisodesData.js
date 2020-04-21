@@ -695,6 +695,6 @@ export const episodes = {
   },
 };
 
-export const shows = episodes._embedded.episodes;
+export const shows = episodes._embedded;
 
 // console.log("shows here ", episodes._embedded.episodes);

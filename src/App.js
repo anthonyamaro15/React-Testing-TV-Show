@@ -17,10 +17,12 @@ export default function App() {
   useEffect(() => {
     fetchShow()
       .then((res) => {
-        setShow(res.data);
-        setSeasons(formatSeasons(res.data._embedded.episodes));
+        setShow(res);
+        setSeasons(formatSeasons(res._embedded.episodes));
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const handleSelect = (e) => {
