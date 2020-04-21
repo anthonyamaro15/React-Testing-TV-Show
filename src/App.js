@@ -18,12 +18,9 @@ export default function App() {
     fetchShow()
       .then((res) => {
         setShow(res.data);
-        //   console.log(res.data);
         setSeasons(formatSeasons(res.data._embedded.episodes));
       })
-      .catch((err) => {
-        console.log("there was an error fetching data ", err);
-      });
+      .catch((err) => {});
   }, []);
 
   const handleSelect = (e) => {
@@ -44,6 +41,7 @@ export default function App() {
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}
         placeholder="Select an option"
+        data-testid="options"
       />
       <Episodes episodes={episodes} />
     </div>

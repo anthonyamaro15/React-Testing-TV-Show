@@ -10,7 +10,6 @@ export const fetchShow = () => {
       return res;
     })
     .catch((err) => {
-      console.log("error fetching data", err.message);
       return err;
     });
 };
